@@ -15,14 +15,18 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-// Route::get('/coba', function () {
-//     return view('auth.login');
-// });
+Route::get('/coba', function () {
+    return view('auth.login');
+});
 
 Auth::routes();
 
+// Bila route register diakses maka akan diredirect ke login
 Route::match(["GET", "POST"], "/register", function(){
     return redirect("/login");
 })->name("register");
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route --resources (CRUD) User
+Route::resource("users", "UserController");
