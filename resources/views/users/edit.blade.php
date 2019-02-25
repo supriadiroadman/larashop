@@ -6,7 +6,7 @@
 <div class="col-md-8">
   @if(session('status'))
   <div class="alert alert-success">
-      {{session('status')}}
+    {{session('status')}}
   </div>
   @endif 
   <form enctype="multipart/form-data" class="bg-white shadow-sm p-3" action="{{route('users.update', ['id'=>$user->id])}}" method="POST">
@@ -28,9 +28,29 @@
     
     <label for="">Roles</label>
     <br>
-    <input type="checkbox" {{in_array("ADMIN", json_decode($user->roles)) ? "checked" : ""}} name="roles[]" id="ADMIN" value="ADMIN"> <label for="ADMIN">Administrator</label>
-    <input type="checkbox" {{in_array("STAFF", json_decode($user->roles)) ? "checked" : ""}} name="roles[]" id="STAFF" value="STAFF"> <label for="STAFF">Staff</label>
-    <input type="checkbox" {{in_array("CUSTOMER", json_decode($user->roles)) ? "checked" : ""}} name="roles[]" id="CUSTOMER" value="CUSTOMER"> <label for="CUSTOMER">Customer</label>
+    <input 
+    type="checkbox"
+    {{in_array("ADMIN", json_decode($user->roles)) ? "checked" : ""}} 
+    name="roles[]" 
+    id="ADMIN" 
+    value="ADMIN"> 
+    <label for="ADMIN">Administrator</label>
+
+    <input 
+    type="checkbox"
+    {{in_array("STAFF", json_decode($user->roles)) ? "checked" : ""}} 
+    name="roles[]" 
+    id="STAFF" 
+    value="STAFF"> 
+    <label for="STAFF">Staff</label>
+
+    <input 
+    type="checkbox"
+    {{in_array("CUSTOMER", json_decode($user->roles)) ? "checked" : ""}} 
+    name="roles[]" 
+    id="CUSTOMER" 
+    value="CUSTOMER"> 
+    <label for="CUSTOMER">Customer</label>
     <br>
 
     <br>
@@ -64,6 +84,6 @@
     <br>
     
     <input class="btn btn-primary" type="submit" value="Simpan"/>
-</form>
+  </form>
 </div>
 @endsection 

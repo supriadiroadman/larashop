@@ -8,10 +8,10 @@
   @if(session('status'))
   <div class="alert alert-success">
     {{session('status')}}
-  </div>
-  @endif
+</div>
+@endif
 
-  <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-sm p-3">
+<form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-sm p-3">
     @csrf
     <label for="name">Name</label>
     <input class="form-control" placeholder="Full Name" type="text" name="name" id="name"/>
@@ -57,7 +57,7 @@
     <input class="form-control" placeholder="password confirmation" type="password" name="password_confirmation" id="password_confirmation"/>
     <br>
 
-    <input class="btn btn-primary" type="submit" value="Simpan"/>
-  </form>
+    <input class="btn btn-primary" type="submit" value="Save"/>
+</form>
 </div>
 @endsection
