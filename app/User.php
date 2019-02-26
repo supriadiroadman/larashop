@@ -27,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Relasi ke tabel Order (One To Many)
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }

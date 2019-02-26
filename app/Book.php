@@ -13,4 +13,9 @@ class Book extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
+    // Relasi ke table orders (Many To Many)
+    public function orders(){
+        return $this->belongsToMany('App\Order');
+    }
 }
