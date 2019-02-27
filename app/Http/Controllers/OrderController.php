@@ -15,7 +15,7 @@ class OrderController extends Controller
     {
         $status = $request->get('status');
         $buyer_email = $request->get('buyer_email');
-         $orders = \App\Order::with('user')
+        $orders = \App\Order::with('user')
                     ->with('books')
                     ->whereHas('user', function($query) use ($buyer_email) {
                         $query->where('email', 'LIKE', "%$buyer_email%");
